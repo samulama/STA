@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+#miobottone1 {
+  display: inline-block;
+  padding: 15px 25px;<
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #04AA6D;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+#miobottone2 {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #f61010;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+#miobottone3 {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #0c04aa;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+#miobottone3 {background-color: #3e8e41}
+
+#miobottone3 {
+  background-color: #3e498e;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+</style>
+</head>
+<body>
+
+
+
+<p>
+la mia prima pagina html con javascript
+evidenzia il funzionamento degli eventi associati
+al premere di un bottone.
+il comando "button" è un tag 'html'
+stilizzo il bottone come piace a me.
+
+</p>
+<input id="mioinput" type="text">
+<button id="miobottone1" onclick="eseguifinestra1()">cliccami per sapere dove vorrei andare</button>
+<script>
+    function eseguifinestra1()
+    {
+        let str=document.getElementById("mioinput").value;
+        alert("ciao ho ricevuto come input il seguente testo: "+ str);
+    }
+    
+
+</script>
+</body>
+</html>
