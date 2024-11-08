@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+   
+   <div>
+    <p id="testo">“Dio non si immischia nelle vicende di dettaglio della storia naturale, cioè nelle cause secondarie che studiano gli scienziati.”.</p> 
+    <button onclick="nascondiTesto1()">Nascondi Testo</button> 
+   </div>
+
+
+   <div>
+    <p id="testo">“È ironico che proprio noi scienziati, che non crediamo in Dio, in un certo senso siamo i più vicini allo stato di un dio.”</p> 
+    <button onclick="nascondiTesto2()">Nascondi Testo</button> 
+   </div>
+
+   <script>
+    function nascondiTesto1() 
+    {
+    const testo = document.getElementById("testo");
+    testo.style.display = "none"; 
+    // Nasconde il testo impostando display a 'none'
+    
+} 
+      </script>
+
+
+
+
+
+<script>
+    function nascondiTesto2() 
+    {
+    const testo = document.getElementById("testo");
+    testo.style.display = "none"; 
+    // Nasconde il testo impostando display a 'none'
+    
+} 
+      </script>
+
+
+</body>
+</html>
