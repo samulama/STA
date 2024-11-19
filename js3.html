@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aforismi di Scienziati</title>
+  <style>
+    .aforisma {
+      margin: 20px 0;
+      padding: 15px;
+      border: 1px solid #ccc;
+      background-color: #f9f9f9;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>Aforismi di Scienziati</h1>
+  <div class="aforisma">
+    <p id="aforisma1">"La cosa più bella che possiamo sperimentare è il mistero; è la fonte di ogni vera arte e di ogni vera scienza."  Albert Einstein</p>
+    <button onclick="nascondiTesto('aforisma1')">Nascondi Aforisma</button>
+  </div>
+  <div class="aforisma">
+    <p id="aforisma2">"La curva è la più graziosa distanza tra due punti." Mae West</p>
+    <button onclick="nascondiTesto('aforisma2')">Nascondi Aforisma</button>
+  </div>
+  <div class="aforisma">
+    <p id="aforisma3">"La gente di solito usa le statistiche come un ubriaco i lampioni: più per sostegno che per illuminazione". Mark Twain</p>
+    <button onclick="nascondiTesto('aforisma3')">Nascondi Aforisma</button>
+  </div>
+  <div class="aforisma">
+    <p id="aforisma4">"Lo scienziato non è l’uomo che fornisce le vere risposte; è quello che pone le vere domande."  Claude Levì Strauss</p>
+    <button onclick="nascondiTesto('aforisma4')">Nascondi Aforisma</button>
+  </div>
+  <div class="aforisma">
+    <p id="aforisma5">"Da qualche parte, qualcosa di incredibile è in attesa di essere scoperto". Carl Segan </p>
+    <button onclick="nascondiTesto('aforisma5')">Nascondi Aforisma</button>
+  </div>
+  <script>
+    function nascondiTesto(id) {
+      const testo = document.getElementById(id);
+      testo.style.display = "none"; 
+    }
+  </script>
+</body>
+</html>
