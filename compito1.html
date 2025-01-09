@@ -38,10 +38,10 @@
             eta = Number(eta);
 
             if (eta >= 18) {
-                document.getElementById("output").innerText = "Accedi al sistema";
+                document.getElementById("output").innerText = "Accedi";
             } else if (eta < 18) {
                 let anniMancanti = 18 - eta;
-                document.getElementById("output").innerText = "Puoi accedere al sistema tra " + anniMancanti + " anni";
+                document.getElementById("output").innerText = "Puoi accedere tra " + anniMancanti + " anni";
             } else {
                 document.getElementById("output").innerText = "Età non valida.";
             }
