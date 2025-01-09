@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verifica Età</title>
+    <style>
+.miobotton1 {
+    #miobottone1 
+        display: inline-block;
+        padding: 15px 25px;
+        font-size: 24px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        color: #fff;
+        background-color: #f61010;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
+    }
+    </style>
+          
+          
+         
+    </style>
+</head>
+<body>
+    <h1>Inserisci la tua età e verifica il pulsante</h1>
+    <input type="number" id="eta" placeholder="Inserisci la tua età"><br>
+    <p><button class="miobotton1" id="miobotton1" onclick="verificaEta()">Verifica Età</button></p>
+    <p id="output"></p>
+
+    <script>
+        function verificaEta() {
+            let eta = document.getElementById("eta").value;
+            eta = Number(eta);
+
+            if (eta >= 18) {
+                document.getElementById("output").innerText = "Accedi al sistema";
+            } else if (eta < 18) {
+                let anniMancanti = 18 - eta;
+                document.getElementById("output").innerText = "Puoi accedere al sistema tra " + anniMancanti + " anni";
+            } else {
+                document.getElementById("output").innerText = "Età non valida.";
+            }
+        }
+    </script>
+</body>
+</html>
