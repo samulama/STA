@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selezione</title>
+    <style>
+
+#miobottone1 {
+        display: inline-block;
+        padding: 15px 25px;
+        font-size: 24px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        color: #fff;
+        background-color: #6b0707;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
+        }
+    
+
+
+    </style>
+
+
+</head>
+<body>
+
+    <p><h1>inserisci il numero per indicare il giorno della settimana</h1>
+    </p>
+    <button id="miobottone1" onclick="calcola()"> Inserisci il numero</button>
+
+<script>
+ 
+    
+
+ function calcola() {
+            let giorno;
+            let numero = parseInt(prompt("Inserisci un numero da 1 a 7: "));
+            if (numero == 1) {
+                giorno = "Lunedì";
+            } else if (numero == 2) {
+                giorno = "Martedì";
+            } else if (numero == 3) {
+                giorno = "Mercoledì";
+            } else if (numero == 4) {
+                giorno = "Giovedì";
+            } else if (numero == 5) {
+                giorno = "Venerdì";
+            } else if (numero == 6) {
+                giorno = "Sabato";
+            } else if (numero == 7) {
+                giorno = "Domenica";
+            } else {
+                giorno = "Il numero non è valido";
+            }
+            if (giorno == "Il numero non è valido") {
+                alert("Il numero non è valido");
+            } else {
+                alert("Il numero " + numero + " equivale al giorno " + giorno);
+            }
+        }
+
+
+
+</script>
+
+
+
+   
+</body>
+</html>
