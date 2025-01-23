@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legge di Ohm</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .concepts {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+        .calculator {
+            margin-top: 20px;
+        }
+        input {
+            margin: 5px;
+            padding: 10px;
+            font-size: 1em;
+            width: 150px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>HTML Image</h2>
+<img src="IMG_2904.jpeg" alt="mappa concettuale ohm" width="500" height="333">
+
+    <h1>Legge di Ohm</h1>
+
+    <div class="section">
+        <h2>Definizione della Legge di Ohm</h2>
+        <p>La Legge di Ohm afferma che la corrente che passa attraverso un conduttore è direttamente proporzionale alla tensione ai suoi capi e inversamente proporzionale alla resistenza del conduttore. La formula che la esprime è:</p>
+        <p><strong>V = I * R</strong></p>
+    </div>
+
+    <div class="section concepts">
+        <h2>Concetti Riassunti</h2>
+        <p>1. La tensione (V) è la "forza" che spinge gli elettroni nel circuito.</p>
+        <p>2. La corrente (I) è il flusso di elettroni che si spostano nel conduttore.</p>
+        <p>3. La resistenza (R) è la difficoltà che un materiale offre al passaggio della corrente.</p>
+        <p>4. La Legge di Ohm è espressa come V = I * R.</p>
+        <p>5. Se conosci due variabili, puoi calcolare la terza (V, I o R) con questa formula.</p>
+    </div>
+
+    <div class="section calculator">
+        <h2>Calcolatore Legge di Ohm</h2>
+        <label for="voltage">Tensione (V): </label>
+        <input type="number" id="voltage" placeholder="Inserisci V" /><br>
+        <label for="current">Corrente (I): </label>
+        <input type="number" id="current" placeholder="Inserisci I" /><br>
+        <label for="resistance">Resistenza (R): </label>
+        <input type="number" id="resistance" placeholder="Inserisci R" /><br>
+        <button onclick="calcolaOhm()">Calcola</button>
+
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        function calcolaOhm() {
+            var V = document.getElementById("voltage").value;
+            var I = document.getElementById("current").value;
+            var R = document.getElementById("resistance").value;
+            var resultText = '';
+
+            // Verifica quale valore manca e calcola
+            if (V === "" && I !== "" && R !== "") {
+                // Calcola V
+                V = I * R;
+                resultText = `La tensione (V) è: ${V} V`;
+            } else if (I === "" && V !== "" && R !== "") {
+                // Calcola I
+                I = V / R;
+                resultText = `La corrente (I) è: ${I} A`;
+            } else if (R === "" && V !== "" && I !== "") {
+                // Calcola R
+                R = V / I;
+                resultText = `La resistenza (R) è: ${R} Ω`;
+            } else {
+                resultText = "Inserisci due valori per calcolare il terzo.";
+            }
+
+            document.getElementById("result").innerText = resultText;
+        }
+    </script>
+<h1>
+    biografia di ohm
+    <p>
+        Georg Simon Ohm è stato un fisico e matematico tedesco, noto soprattutto per aver formulato la Legge di Ohm, uno dei principi fondamentali dell’elettricità. Nato a Erlangen, in Germania, nel 1789, Ohm intraprese studi in matematica e fisica, ma la sua carriera accademica non fu immediatamente brillante, tanto che inizialmente insegnò in scuole secondarie. Solo in seguito riuscì a dedicarsi alla ricerca scientifica.
+    </p>
+</h1>
+</body>
+<img src="ohm.jpg" alt="mappa concettuale ohm" width="500" height="333">
+<h1>
+    sitografia
+    <p>
+        chatgpt prompt"legge di ohm,biografia su ohm
+       primo video legge di ohm<a href="https://youtu.be/4YlCsEnm4E0">
+
+
+       secondo video legge di ohm<a href="https://youtu.be/QHifiMuHFBg">
+
+       </a>
+    </p>
+</h1>
+</html>
