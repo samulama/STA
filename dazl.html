@@ -1,118 +1,55 @@
 
 <!DOCTYPE html>
-<html lang="it">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Calcolatore Finanziario - Dazi di Esportazione</title>
-<style>
-body {
-font-family: Arial, sans-serif;
-margin: 20px;
-background-color: #e3f2fd;
-}
-.container {
-background: white;
-padding: 20px;
-border-radius: 8px;
-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-max-width: 500px;
-margin: auto;
-text-align: center;
-}
-input, button {
-width: 100%;
-margin-bottom: 10px;
-padding: 8px;
-border-radius: 5px;
-border: 1px solid #ccc;
-}
-button {
-background-color: #0288d1;
-color: white;
-cursor: pointer;
-}
-button:hover {
-background-color: #0277bd;
-}
-table {
-width: 100%;
-margin-top: 20px;
-border-collapse: collapse;
-}
-th, td {
-border: 1px solid #ddd;
-padding: 8px;
-}
-th {
-background-color: #0288d1;
-color: white;
-}
-</style>
-</head>
-<body>
-
-<div class="container">
-<h2>Calcolatore Finanziario</h2>
-<p>I dazi di esportazione sono tariffe imposte su beni esportati. Ogni paese ha regole diverse.</p>
-
-<table>
-<tr>
-<th>Paese</th>
-<th>Dazio (%)</th>
-</tr>
-<tr>
-<td>Cina</td>
-<td>34%</td>
-</tr>
-<tr>
-<td>Unione Europea</td>
-<td>20%</td>
-</tr>
-<tr>
-<td>Svizzera</td>
-<td>31%</td>
-</tr>
-<tr>
-<td>Giappone</td>
-<td>24%</td>
-</tr>
-<tr>
-<td>India</td>
-<td>26%</td>
-</tr>
-</table>
-
-<input type="number" id="costo" placeholder="Costo (€)">
-<input type="number" id="ricarico" placeholder="Ricarico (€)">
-<button onclick="calcolaValore()">Calcola valore esportazione</button>
-
-<input type="number" id="percentuale" placeholder="Percentuale %" value="20">
-<button onclick="calcolaPercentuale()">Calcola percentuale</button>
-
-<input type="text" id="risultato" placeholder="Risultato (€)">
-<p id="conversione"></p>
-</div>
-
-<script>
-function calcolaValore() {
-let costo = parseFloat(document.getElementById('costo').value);
-let ricarico = parseFloat(document.getElementById('ricarico').value);
-let somma = costo + ricarico;
-document.getElementById('risultato').value = somma;
-}
-
-function calcolaPercentuale() {
-let somma = parseFloat(document.getElementById('risultato').value);
-let percentuale = parseFloat(document.getElementById('percentuale').value);
-let valorePercentuale = (somma * percentuale) / 100;
-let dazioPercentuale = (valorePercentuale / somma) * 100;
-let conversioneDollaro = somma * 1.1;
-
-document.getElementById('risultato').value = dazioPercentuale.toFixed(2) + "%";
-document.getElementById('conversione').innerText = `Dazio: ${dazioPercentuale.toFixed(2)}% | Conversione: ${conversioneDollaro.toFixed(2)}$`;
-}
-</script>
-
-</body>
-</html>
+ <html>
+ <head>
+   <title>Calcolatore di Dazi</title>
+ </head>
+ <body>
+   <h1>Calcolatore di Dazi di Esportazione</h1>
+ 
+   <p>I dazi di esportazione sono tasse applicate sui beni esportati da un paese verso un altro. Ogni paese può avere percentuali diverse. Ecco una tabella esempio:</p>
+   <ul>
+     <li>Italia: 20%</li>
+     <li>USA: 15%</li>
+     <li>Cina: 25%</li>
+   </ul>
+ 
+   <div>
+     <label>Costo (€): </label>
+     <input id="costo" type="number"><br>
+ 
+     <label>Ricarico (€): </label>
+     <input id="ricarico" type="number"><br>
+ 
+     <label>Percentuale da applicare (default 20%): </label>
+     <input id="percentuale" type="number" value="20"><br>
+ 
+     <button onclick="calcolaDazio()">Calcola Valore Esportazione e Percentuale</button><br><br>
+ 
+     <label>Valore da suddividere (€): </label>
+     <input id="risultato" readonly><br>
+ 
+     <p id="dettagli"></p>
+   </div>
+ 
+   <script>
+     function calcolaDazio() {
+       let costo = parseFloat(document.getElementById("costo").value);
+       let ricarico = parseFloat(document.getElementById("ricarico").value);
+       let percentuale = parseFloat(document.getElementById("percentuale").value);
+ 
+       let somma = costo + ricarico;
+       let percentualeValore = (somma * percentuale) / 100;
+ 
+       document.getElementById("risultato").value = percentualeValore.toFixed(2);
+ 
+       let dazio = (percentualeValore / 2).toFixed(2);
+       let inDollari = (percentualeValore / 2 * 1.10).toFixed(2);
+ 
+       document.getElementById("dettagli").innerHTML =
+         "Dazio in €: " + dazio + "<br>" +
+         "Valore convertito in $: " + inDollari;
+     }
+   </script>
+ </body>
+ </html>
